@@ -10,7 +10,9 @@ const RegisterPage = () => {
   const [showPass, setShowPass] = useState(false);
   const [errors, setErrors] = useState({});
 
-  useEffect(() => { if (user) navigate('/'); }, [user]);
+  useEffect(() => {
+      if (user) navigate('/');
+  }, [user, navigate]);
 
   const validate = () => {
     const e = {};

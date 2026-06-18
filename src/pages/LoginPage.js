@@ -13,7 +13,9 @@ const LoginPage = () => {
   const [showPass, setShowPass] = useState(false);
   const [errors, setErrors] = useState({});
 
-  useEffect(() => { if (user) navigate(from, { replace: true }); }, [user]);
+  useEffect(() => {
+         if (user) navigate(from, { replace: true });
+   }, [user, from, navigate]);
 
   const validate = () => {
     const e = {};

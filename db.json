@@ -198,6 +198,13 @@
       "password": "123456",
       "role": "user",
       "id": 3
+    },
+    {
+      "name": "tony",
+      "email": "tony@gmail.com",
+      "password": "12345678",
+      "role": "user",
+      "id": 4
     }
   ],
   "orders": []

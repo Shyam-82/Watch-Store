@@ -21,13 +21,15 @@ const WatchDetailPage = () => {
   const [qty, setQty] = useState(1);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-    setLoadingDetail(true);
-    getWatch(id).then(data => {
-      setWatch(data);
-      setLoadingDetail(false);
-    });
-  }, [id]);
+  window.scrollTo(0, 0);
+  setLoadingDetail(true);
+
+  getWatch(id).then(data => {
+    setWatch(data);
+    setLoadingDetail(false);
+  });
+
+}, [id, getWatch]);
 
   const handleAddToCart = () => {
     for (let i = 0; i < qty; i++) addToCart(watch);
