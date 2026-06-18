@@ -1,0 +1,204 @@
+{
+  "watches": [
+    {
+      "id": 1,
+      "name": "Royal Perpetual Tourbillon",
+      "brand": "Chronex",
+      "image": "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=600&q=80",
+      "category": "Luxury",
+      "price": 12999,
+      "rating": 4.9,
+      "stock": 5,
+      "description": "A masterpiece of haute horlogerie, the Royal Perpetual Tourbillon features a flying tourbillon escapement with perpetual calendar and moon phase complication. The 42mm rose gold case houses an in-house caliber with 72-hour power reserve. Sapphire crystal front and back with anti-reflective coating."
+    },
+    {
+      "id": 2,
+      "name": "Submariner Deep Blue",
+      "brand": "OceanMaster",
+      "image": "https://images.unsplash.com/photo-1547996160-81dfa63595aa?w=600&q=80",
+      "category": "Diver",
+      "price": 4299,
+      "rating": 4.8,
+      "stock": 12,
+      "description": "Built for the depths, the Submariner Deep Blue features 1000m water resistance with a unidirectional rotating bezel in ceramic. The luminous dial ensures visibility in complete darkness. Powered by an automatic movement with helium escape valve and COSC chronometer certification."
+    },
+    {
+      "id": 3,
+      "name": "Aviator Chronograph Pro",
+      "brand": "SkyWatch",
+      "image": "https://images.unsplash.com/photo-1508057198894-247b23fe5ade?w=600&q=80",
+      "category": "Sport",
+      "price": 2799,
+      "rating": 4.7,
+      "stock": 8,
+      "description": "Inspired by vintage pilot watches, the Aviator Chronograph Pro combines classic aviation aesthetics with modern precision. Features a flyback chronograph, GMT function, and slide rule bezel. The anti-magnetic case is certified for extreme conditions from -20°C to +60°C."
+    },
+    {
+      "id": 4,
+      "name": "Dress Watch Ultra Slim",
+      "brand": "EleganceTime",
+      "image": "https://images.unsplash.com/photo-1594534475808-b18fc33b045e?w=600&q=80",
+      "category": "Dress",
+      "price": 1899,
+      "rating": 4.6,
+      "stock": 15,
+      "description": "The epitome of refined elegance, this ultra-slim dress watch measures just 6.5mm in height. The white lacquered dial with Roman numerals and blued steel hands presents a timeless aesthetic. Paired with a hand-stitched alligator strap in midnight navy."
+    },
+    {
+      "id": 5,
+      "name": "Skeleton Automatic",
+      "brand": "Chronex",
+      "image": "https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?w=600&q=80",
+      "category": "Luxury",
+      "price": 7499,
+      "rating": 4.8,
+      "stock": 6,
+      "description": "The Skeleton Automatic is a window into the art of watchmaking. Every bridge and plate has been hand-chamfered and polished to reveal the intricate mechanics within. The 45mm titanium case with sapphire dial front and back showcases the manually-wound movement in its full glory."
+    },
+    {
+      "id": 6,
+      "name": "Heritage GMT Traveler",
+      "brand": "GlobalTime",
+      "image": "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=600&q=80",
+      "category": "Sport",
+      "price": 3599,
+      "rating": 4.5,
+      "stock": 10,
+      "description": "Track two time zones simultaneously with the Heritage GMT Traveler. The distinctive two-tone bezel in red and blue ceramic has become an icon among frequent travelers. Automatic movement with quick-set GMT hand and date display. 100m water resistance with screw-down crown."
+    },
+    {
+      "id": 7,
+      "name": "Chronograph Steel",
+      "brand": "SkyWatch",
+      "image": "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=600&q=80",
+      "category": "Sport",
+      "price": 1499,
+      "rating": 4.4,
+      "stock": 20,
+      "description": "A versatile sports chronograph with tachymeter scale for measuring speed over distance. The integrated steel bracelet with push-button clasp ensures a secure fit during any activity. Water resistant to 100m with luminous hands and hour markers for low-light visibility."
+    },
+    {
+      "id": 8,
+      "name": "Pearl Moonphase",
+      "brand": "EleganceTime",
+      "image": "https://images.unsplash.com/photo-1611338524651-5db685ee0aec?w=600&q=80",
+      "category": "Dress",
+      "price": 3299,
+      "rating": 4.7,
+      "stock": 7,
+      "description": "Celebrating the poetry of the moon, the Pearl Moonphase features a mother-of-pearl dial with a hand-painted moonphase disc accurate to one day in 135 years. Set with 68 brilliant-cut diamonds on the bezel. Available on a satin-finished bracelet or leather strap."
+    },
+    {
+      "id": 9,
+      "name": "Tactical Field Watch",
+      "brand": "ArmyTech",
+      "image": "https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?w=600&q=80",
+      "category": "Sport",
+      "price": 899,
+      "rating": 4.3,
+      "stock": 25,
+      "description": "Engineered for the field, the Tactical Field Watch is built to withstand the harshest environments. Shock-resistant, anti-magnetic, and water resistant to 200m. The matte black PVD case with scratch-resistant mineral crystal is complemented by a reinforced rubber strap with quick-release system."
+    },
+    {
+      "id": 10,
+      "name": "Rose Gold Eternal",
+      "brand": "Chronex",
+      "image": "https://images.unsplash.com/photo-1533139502658-0198f920d8e8?w=600&q=80",
+      "category": "Luxury",
+      "price": 9999,
+      "rating": 4.9,
+      "stock": 4,
+      "description": "The Rose Gold Eternal is a declaration of timeless beauty. The 39mm case in 18k rose gold houses a hand-wound movement with a power reserve indicator. The salmon-toned sunburst dial with applied gold indices catches the light with every movement of the wrist."
+    },
+    {
+      "id": 11,
+      "name": "Smart Connect Pro",
+      "brand": "TechTime",
+      "image": "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=600&q=80",
+      "category": "Smart",
+      "price": 599,
+      "rating": 4.2,
+      "stock": 30,
+      "description": "Bridging the gap between traditional elegance and modern technology, the Smart Connect Pro features health monitoring, GPS tracking, and 7-day battery life in a premium stainless steel body. Compatible with iOS and Android with customizable watch faces and interchangeable straps."
+    },
+    {
+      "id": 12,
+      "name": "Vintage Automatic 1960",
+      "brand": "GlobalTime",
+      "image": "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=600&q=80",
+      "category": "Dress",
+      "price": 2199,
+      "rating": 4.6,
+      "stock": 9,
+      "description": "A faithful recreation of a 1960 design, this vintage-inspired automatic watch features a domed crystal, textured dial, and period-correct lug shape. The self-winding movement has been modernized with improved accuracy and water resistance while preserving the soul of the original."
+    },
+    {
+      "id": 13,
+      "name": "Oceanic Diver Elite",
+      "brand": "OceanMaster",
+      "image": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
+      "category": "Diver",
+      "price": 2899,
+      "rating": 4.6,
+      "stock": 11,
+      "description": "Designed for professional divers, the Oceanic Elite meets ISO 6425 diver's watch standards. Features a 600m water resistance rating, luminous bezel, and super-LumiNova coating on all indicators. The titanium case reduces weight without sacrificing durability."
+    },
+    {
+      "id": 14,
+      "name": "Minimalist White",
+      "brand": "EleganceTime",
+      "image": "https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?w=600&q=80",
+      "category": "Dress",
+      "price": 799,
+      "rating": 4.4,
+      "stock": 18,
+      "description": "Less is more with the Minimalist White. A clean white dial with only hour and minute hands and a discreet date window at 3 o'clock. The 38mm stainless steel case on a genuine leather strap makes this the perfect everyday dress watch for any occasion."
+    },
+    {
+      "id": 15,
+      "name": "Carbon Fiber Racer",
+      "brand": "SkyWatch",
+      "image": "https://images.unsplash.com/photo-1589739900266-43b2843f4c12?w=600&q=80",
+      "category": "Sport",
+      "price": 3799,
+      "rating": 4.7,
+      "stock": 7,
+      "description": "Born from motorsport, the Carbon Fiber Racer features a forged carbon fiber case that is stronger than steel yet lighter than aluminum. The tachymeter bezel and racing stripe dial pay homage to track culture. Automatic movement with 48-hour power reserve."
+    },
+    {
+      "id": 16,
+      "name": "Grand Complication Master",
+      "brand": "Chronex",
+      "image": "https://images.unsplash.com/photo-1600080975507-a9376b5f7da2?w=600&q=80",
+      "category": "Luxury",
+      "price": 24999,
+      "rating": 5,
+      "stock": 2,
+      "description": "The pinnacle of watchmaking art, the Grand Complication Master features a minute repeater, perpetual calendar, rattrapante chronograph, and celestial chart in a 46mm platinum case. Each watch requires 18 months of assembly by a single master watchmaker and is individually numbered."
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Admin User",
+      "email": "admin@watches.com",
+      "password": "admin123",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "name": "John Doe",
+      "email": "john@example.com",
+      "password": "john123",
+      "role": "user"
+    },
+    {
+      "name": "Shyam",
+      "email": "shyam828@gmail.com",
+      "password": "123456",
+      "role": "user",
+      "id": 3
+    }
+  ],
+  "orders": []
+}
