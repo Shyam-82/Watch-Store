@@ -6,7 +6,7 @@ const WatchContext = createContext();
 
 export const useWatches = () => useContext(WatchContext);
 
-const API = 'http://localhost:5000/watches';
+const API = 'https://watch-store-api-opck.onrender.com/watches';
 
 export const WatchProvider = ({ children }) => {
   const [watches, setWatches] = useState([]);
