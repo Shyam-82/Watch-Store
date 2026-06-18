@@ -28,7 +28,7 @@ const Footer = () => {
               {['Instagram', 'Twitter', 'Facebook'].map(s => (
                 <a
                   key={s}
-                  href="#"
+                  href="/"
                   className="text-xs tracking-widest uppercase transition-colors duration-200 hover:text-yellow-600"
                   style={{ color: '#444' }}
                 >
@@ -81,7 +81,7 @@ const Footer = () => {
           </p>
           <div className="flex gap-6">
             {['Privacy Policy', 'Terms of Service', 'Returns'].map(item => (
-              <a key={item} href="#" className="text-xs transition-colors hover:text-yellow-600" style={{ color: '#333' }}>
+              <a key={item} href="/" className="text-xs transition-colors hover:text-yellow-600" style={{ color: '#333' }}>
                 {item}
               </a>
             ))}
