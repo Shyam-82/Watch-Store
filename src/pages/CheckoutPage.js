@@ -1,15 +1,32 @@
 import React, { useState } from 'react';
-//import { Link, useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 import { formatPrice } from '../utils/helpers';
 import { toast } from 'react-toastify';
 
+
+const InputField = ({ label, name, type = 'text', placeholder, half, value, onChange, error }) => (
+  <div className={half ? '' : 'col-span-2'}>
+    <label className="block text-[10px] tracking-[0.15em] uppercase mb-1.5" style={{ color: '#777' }}>
+      {label}
+    </label>
+    <input
+      type={type}
+      name={name}
+      value={value}
+      onChange={onChange}
+      placeholder={placeholder}
+      className="input-dark w-full px-3 py-2.5 text-sm"
+      autoComplete="off"
+    />
+    {error && <p className="text-[10px] text-red-400 mt-1">{error}</p>}
+  </div>
+);
+
 const CheckoutPage = () => {
   const { cartItems, subtotal, tax, delivery, grandTotal, clearCart, totalItems } = useCart();
   const { user } = useAuth();
-  //const navigate = useNavigate();
   const [placing, setPlacing] = useState(false);
   const [ordered, setOrdered] = useState(false);
 
@@ -31,11 +48,9 @@ const CheckoutPage = () => {
 
   const handleChange = (e) => {
     let val = e.target.value;
-    // Format card number
     if (e.target.name === 'cardNumber') {
       val = val.replace(/\D/g, '').slice(0, 16).replace(/(.{4})/g, '$1 ').trim();
     }
-    // Format expiry
     if (e.target.name === 'expiry') {
       val = val.replace(/\D/g, '').slice(0, 4);
       if (val.length > 2) val = val.slice(0, 2) + '/' + val.slice(2);
@@ -53,7 +68,7 @@ const CheckoutPage = () => {
     if (!form.city) e.city = 'Required';
     if (!form.zip) e.zip = 'Required';
     if (!form.cardName) e.cardName = 'Required';
-    if (!form.cardNumber || form.cardNumber.replace(/\s/g,'').length < 16) e.cardNumber = 'Enter valid card number';
+    if (!form.cardNumber || form.cardNumber.replace(/\s/g, '').length < 16) e.cardNumber = 'Enter valid card number';
     if (!form.expiry || form.expiry.length < 5) e.expiry = 'Required';
     if (!form.cvv || form.cvv.length < 3) e.cvv = 'Required';
     return e;
@@ -64,13 +79,12 @@ const CheckoutPage = () => {
     const errs = validate();
     if (Object.keys(errs).length) { setErrors(errs); toast.error('Please fill all required fields.'); return; }
     setPlacing(true);
-    await new Promise(r => setTimeout(r, 1800)); // Simulate API
+    await new Promise(r => setTimeout(r, 1800));
     clearCart();
     setOrdered(true);
     setPlacing(false);
   };
 
-  // Success screen
   if (ordered) {
     return (
       <div className="pt-16 min-h-screen flex items-center justify-center px-6">
@@ -105,26 +119,13 @@ const CheckoutPage = () => {
       <div className="pt-16 min-h-screen flex items-center justify-center px-6 text-center">
         <div>
           <p className="text-gray-600 mb-6">Your cart is empty.</p>
-          <Link to="/watches" className="btn-gold px-8 py-3 text-xs tracking-[0.15em] uppercase">Browse Collection</Link>
+          <Link to="/watches" className="btn-gold px-8 py-3 text-xs tracking-[0.15em] uppercase">
+            Browse Collection
+          </Link>
         </div>
       </div>
     );
   }
-
-  const InputField = ({ label, name, type = 'text', placeholder, half }) => (
-    <div className={half ? '' : 'col-span-2'}>
-      <label className="block text-[10px] tracking-[0.15em] uppercase mb-1.5" style={{ color: '#777' }}>{label}</label>
-      <input
-        type={type}
-        name={name}
-        value={form[name]}
-        onChange={handleChange}
-        placeholder={placeholder}
-        className="input-dark w-full px-3 py-2.5 text-sm"
-      />
-      {errors[name] && <p className="text-[10px] text-red-400 mt-1">{errors[name]}</p>}
-    </div>
-  );
 
   return (
     <div className="pt-16">
@@ -140,6 +141,7 @@ const CheckoutPage = () => {
 
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+
           {/* Left: Forms */}
           <div className="lg:col-span-2 space-y-8">
 
@@ -149,13 +151,13 @@ const CheckoutPage = () => {
                 Shipping Information
               </h2>
               <div className="grid grid-cols-2 gap-4">
-                <InputField label="Full Name" name="name" placeholder="John Doe" />
-                <InputField label="Email" name="email" type="email" placeholder="john@email.com" half />
-                <InputField label="Phone" name="phone" placeholder="+1 555 000 0000" half />
-                <InputField label="Street Address" name="address" placeholder="123 Main Street" />
-                <InputField label="City" name="city" placeholder="New York" half />
-                <InputField label="State" name="state" placeholder="NY" half />
-                <InputField label="ZIP Code" name="zip" placeholder="10001" half />
+                <InputField label="Full Name"       name="name"    placeholder="John Doe"          value={form.name}    onChange={handleChange} error={errors.name} />
+                <InputField label="Email"           name="email"   type="email" placeholder="john@email.com" half value={form.email}   onChange={handleChange} error={errors.email} />
+                <InputField label="Phone"           name="phone"   placeholder="+1 555 000 0000"   half value={form.phone}   onChange={handleChange} error={errors.phone} />
+                <InputField label="Street Address"  name="address" placeholder="123 Main Street"        value={form.address} onChange={handleChange} error={errors.address} />
+                <InputField label="City"            name="city"    placeholder="New York"           half value={form.city}    onChange={handleChange} error={errors.city} />
+                <InputField label="State"           name="state"   placeholder="NY"                 half value={form.state}   onChange={handleChange} error={errors.state} />
+                <InputField label="ZIP Code"        name="zip"     placeholder="10001"              half value={form.zip}     onChange={handleChange} error={errors.zip} />
                 <div>
                   <label className="block text-[10px] tracking-[0.15em] uppercase mb-1.5" style={{ color: '#777' }}>Country</label>
                   <select name="country" value={form.country} onChange={handleChange} className="select-dark w-full px-3 py-2.5 text-sm">
@@ -177,7 +179,6 @@ const CheckoutPage = () => {
               <h2 className="text-sm tracking-[0.2em] uppercase font-semibold mb-6" style={{ color: '#c9a84c' }}>
                 Payment Details
               </h2>
-              {/* Card icons */}
               <div className="flex gap-2 mb-5">
                 {['VISA', 'MC', 'AMEX'].map(c => (
                   <span key={c} className="text-[10px] px-2 py-1 font-bold tracking-widest"
@@ -187,18 +188,32 @@ const CheckoutPage = () => {
                 ))}
               </div>
               <div className="grid grid-cols-2 gap-4">
-                <InputField label="Name on Card" name="cardName" placeholder="John Doe" />
-                <InputField label="Card Number" name="cardNumber" placeholder="0000 0000 0000 0000" />
+                <InputField label="Name on Card" name="cardName"   placeholder="John Doe"              value={form.cardName}   onChange={handleChange} error={errors.cardName} />
+                <InputField label="Card Number"  name="cardNumber" placeholder="0000 0000 0000 0000"    value={form.cardNumber} onChange={handleChange} error={errors.cardNumber} />
                 <div>
                   <label className="block text-[10px] tracking-[0.15em] uppercase mb-1.5" style={{ color: '#777' }}>Expiry Date</label>
-                  <input type="text" name="expiry" value={form.expiry} onChange={handleChange}
-                    placeholder="MM/YY" maxLength={5} className="input-dark w-full px-3 py-2.5 text-sm" />
+                  <input
+                    type="text"
+                    name="expiry"
+                    value={form.expiry}
+                    onChange={handleChange}
+                    placeholder="MM/YY"
+                    maxLength={5}
+                    className="input-dark w-full px-3 py-2.5 text-sm"
+                  />
                   {errors.expiry && <p className="text-[10px] text-red-400 mt-1">{errors.expiry}</p>}
                 </div>
                 <div>
                   <label className="block text-[10px] tracking-[0.15em] uppercase mb-1.5" style={{ color: '#777' }}>CVV</label>
-                  <input type="password" name="cvv" value={form.cvv} onChange={handleChange}
-                    placeholder="•••" maxLength={4} className="input-dark w-full px-3 py-2.5 text-sm" />
+                  <input
+                    type="password"
+                    name="cvv"
+                    value={form.cvv}
+                    onChange={handleChange}
+                    placeholder="•••"
+                    maxLength={4}
+                    className="input-dark w-full px-3 py-2.5 text-sm"
+                  />
                   {errors.cvv && <p className="text-[10px] text-red-400 mt-1">{errors.cvv}</p>}
                 </div>
               </div>
@@ -222,7 +237,6 @@ const CheckoutPage = () => {
                 <p className="text-xs text-gray-600 mt-0.5">{totalItems} items</p>
               </div>
 
-              {/* Items */}
               <div className="max-h-64 overflow-y-auto">
                 {cartItems.map(item => (
                   <div key={item.id} className="flex gap-3 px-6 py-3" style={{ borderBottom: '1px solid #151515' }}>
@@ -238,7 +252,6 @@ const CheckoutPage = () => {
                 ))}
               </div>
 
-              {/* Billing breakdown */}
               <div className="px-6 py-5 space-y-3">
                 <div className="flex justify-between text-xs text-gray-600">
                   <span>Subtotal</span><span>{formatPrice(subtotal)}</span>
@@ -264,7 +277,6 @@ const CheckoutPage = () => {
                 </div>
               </div>
 
-              {/* Place Order */}
               <div className="px-6 pb-6">
                 <button
                   onClick={handlePlaceOrder}
@@ -273,7 +285,8 @@ const CheckoutPage = () => {
                 >
                   {placing ? (
                     <span className="flex items-center justify-center gap-2">
-                      <span className="w-4 h-4 border-2 border-t-transparent rounded-full animate-spin" style={{ borderColor: 'rgba(0,0,0,0.3)', borderTopColor: 'transparent' }} />
+                      <span className="w-4 h-4 border-2 border-t-transparent rounded-full animate-spin"
+                        style={{ borderColor: 'rgba(0,0,0,0.3)', borderTopColor: 'transparent' }} />
                       Processing...
                     </span>
                   ) : `Place Order · ${formatPrice(grandTotal)}`}
